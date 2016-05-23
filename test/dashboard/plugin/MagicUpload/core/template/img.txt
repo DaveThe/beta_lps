@@ -1,0 +1,1 @@
+<button name="upload_btn_MKUID" class="btn btn-info" type="button" id="upload_btn_MKUID">Apri Caricamento</button><p><img src="" id="img-MKUID-src" onClick="openImg(this.src);"/></p><input type="text" name="img_MKUID" id="img_MKUID" class="form-control" readonly placeholder="Nessun file caricato" onChange="ChangeForm();" value="">

@@ -1,0 +1,3 @@
+<?php
+define("MODE", 	      'PROD');
+?>
