@@ -1,0 +1,65 @@
+AddType application/x-httpd-php55 .php
+<IfModule mod_expires.c>
+    ExpiresActive on
+	ExpiresByType application/javascript "access plus 1 months" 
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+	ExpiresByType text/css "access plus 1 months"
+</IfModule>
+
+# BEGIN Compressione MOD_Deflate
+SetOutputFilter DEFLATE
+AddOutputFilter DEFLATE text/plain
+AddOutputFilter DEFLATE text/xml
+AddOutputFilter DEFLATE application/xhtml+xml
+AddOutputFilter DEFLATE text/css
+AddOutputFilter DEFLATE application/xml
+AddOutputFilter DEFLATE image/svg+xml
+AddOutputFilter DEFLATE application/rss+xml
+AddOutputFilter DEFLATE application/atom_xml
+AddOutputFilter DEFLATE application/x-javascript
+AddOutputFilter DEFLATE application/x-httpd-php
+AddOutputFilter DEFLATE application/x-httpd-fastphp
+AddOutputFilter DEFLATE application/x-httpd-eruby
+AddOutputFilter DEFLATE text/html
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.pdf$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.avi$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.mov$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.mp3$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.mp4$ no-gzip dont-vary
+SetEnvIfNoCase Request_URI \.rm$ no-gzip dont-vary
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+# End Compressione MOD_Deflate
+
+#SetEnv TZ Europe/Rome
+
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|woff|woff2)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+# disabilita esplicitamepte la cache per scripts e altri files dinamici
+<FilesMatch ".(pl|php|cgi|spl|scgi|fcgi)$">
+Header unset Cache-Control
+</FilesMatch>
+
+
+RewriteEngine On
+RewriteBase /
+#Rules for Versioned Static Files
+RewriteRule ^(js|css|images)/(.+)\_\_(.+)\.(js|css|php|png)$ $1/$2.$4 [L]
+
+# proc/self/environ? no!
+RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+
+# proteggi htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+

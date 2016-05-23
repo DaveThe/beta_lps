@@ -7,7 +7,7 @@ date_default_timezone_set ('UTC');
         case 'TEST':
             
             	set_include_path(
-            		dirname(dirname(__FILE__)).'/dashboard/Lib' . PATH_SEPARATOR .
+            		dirname(dirname(__FILE__)).'/Lib' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config/class' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config/social/class' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config' . PATH_SEPARATOR .
@@ -24,7 +24,7 @@ date_default_timezone_set ('UTC');
         case 'LOCALE':
             
             	set_include_path(
-            		dirname(dirname(dirname(dirname(dirname(__FILE__))))).'/14-003_dashboard/4-Web/dashboard/Lib' . PATH_SEPARATOR .
+            		dirname(dirname(dirname(dirname(dirname(__FILE__))))).'/Lib' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config/class' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config/social/class' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config' . PATH_SEPARATOR .
@@ -41,7 +41,7 @@ date_default_timezone_set ('UTC');
         case 'PROD':
             
             	set_include_path(
-            		dirname(dirname(__FILE__)).'/dashboard/Lib' . PATH_SEPARATOR .
+            		dirname(dirname(__FILE__)).'/Lib' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config/class' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config/social/class' . PATH_SEPARATOR .
             		dirname(dirname(__FILE__)).'/config' . PATH_SEPARATOR .
@@ -83,7 +83,6 @@ date_default_timezone_set ('UTC');
     define("MAX_UPLOAD",      '3');
     define("PROD", 	          false);
 	/*********** VAR PATH ******************/
-    define("DASHBOARD_PATH", 	'/dashboard/');
 	define("PLUGIN_CLASS_PATH", 'core/class/');
     define("PLUGIN_PATH", 		dirname(dirname(__FILE__)).'/plugin/');
     

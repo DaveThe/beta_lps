@@ -1,1 +1,0 @@
-<?php /* PLUGIN UPLOAD */ ?>

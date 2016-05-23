@@ -10,9 +10,9 @@ function DBConnect() {
 	{
 		$res_id = new Zend\Db\Adapter\Adapter(array(
 			'driver' => 'Mysqli',
-			'database' => 'Sql948942_1',
-			'username' => 'Sql948942',
-			'password' => '3k8816t6m7'
+			'database' => 'lapsic_deadpool',
+			'username' => 'admin',
+			'password' => 'caDE1988'
 		 ));
 	 
          //$res_id->query('SET @@session.time_zone = "+00:00"');

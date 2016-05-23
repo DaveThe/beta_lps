@@ -1,9 +1,0 @@
-<img id="MKUID_img_src" class="thumbnail img-responsive" style="min-height: 225px; min-width: 225px;" /><br />
-    													                                                                            
-<div class="input-group input-group-sm">
-    <input type="file" name="logo" id="MKUID_avatar" style="display:none;" />
-    <input type="text" name="avatar" id="MKUID_text-avatar" class="form-control"  value="" />
-    <span class="input-group-btn">
-        <button class="btn btn-info btn-flat" type="button" id="MKUID_upload_btn" >Carica</button>
-    </span>
-</div>
