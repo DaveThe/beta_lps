@@ -6,6 +6,3 @@ Versione custom senza CMS prefabbricati
 
 
 Utilizza come layer al DB ZenFramework
-
-
-Progettato e sviluppato da Davide Tresoldi
