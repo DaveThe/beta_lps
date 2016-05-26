@@ -11,8 +11,8 @@ function DBConnect() {
 		$res_id = new Zend\Db\Adapter\Adapter(array(
 			'driver' => 'Mysqli',
 			'database' => 'lapsic_deadpool',
-			'username' => 'admin',
-			'password' => 'caDE1988'
+			'username' => '--username--',
+			'password' => '--password--'
 		 ));
 	 
          //$res_id->query('SET @@session.time_zone = "+00:00"');
